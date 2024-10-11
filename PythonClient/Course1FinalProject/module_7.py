@@ -75,7 +75,7 @@ PLOT_BOT           = 0.1
 PLOT_WIDTH         = 0.8
 PLOT_HEIGHT        = 0.8
 
-WAYPOINTS_FILENAME = './PythonClient/Course1FinalProject/racetrack_waypoints.txt'  # waypoint file to load
+WAYPOINTS_FILENAME = 'racetrack_waypoints.txt'  # waypoint file to load
 DIST_THRESHOLD_TO_LAST_WAYPOINT = 2.0  # some distance from last position before
                                        # simulation ends
                                        
@@ -283,8 +283,6 @@ def exec_waypoint_nav_demo(args):
         # Opens the waypoint file and stores it to "waypoints"
         waypoints_file = WAYPOINTS_FILENAME
         waypoints_np   = None
-        # print(f'List of files in DIR: \n{os.listdir()}')
-        print(f'Current Directory: {os.path.abspath(os.getcwd())}')
         with open(waypoints_file) as waypoints_file_handle:
             waypoints = list(csv.reader(waypoints_file_handle, 
                                         delimiter=',',
@@ -742,4 +740,3 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         print('\nCancelled by user. Bye!')
-
